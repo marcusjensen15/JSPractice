@@ -32,30 +32,108 @@
 
 //this is a correct binary search. make sure to include the return statement on the === equivelency, otherwise it will be an infinant loop
 
-const binarySearch = (array, target) => {
+// const binarySearch = (array, target) => {
+//
+//   let startIndex = 0;
+//   let endIndex = (array.length - 1);
+//
+//   while(startIndex <= endIndex){
+//
+//     let middleIndex = Math.floor((startIndex + endIndex) / 2);
+//
+//     if(target === array[middleIndex]){
+//     return console.log('the number ' + target + 'was found at position' + middleIndex);
+//     }
+//     else if(target < array[middleIndex]){
+//       endIndex = middleIndex - 1;
+//     }
+//     else if(target > array[middleIndex]){
+//       startIndex = middleIndex + 1
+//     }
+//
+//   }
+//   console.log('your number was not found in this array');
+// };
+//
+// let myArray = [0,1,2,3,4,5,6,7,8];
+//
+//
+// binarySearch(myArray,6);
 
-  let startIndex = 0;
-  let endIndex = (array.length - 1);
+//what happens when you overwrite
 
-  while(startIndex <= endIndex){
+// let myArray=[1,2,3,5];
+//
+// myArray.splice(1,0,66);
 
-    let middleIndex = Math.floor((startIndex + endIndex) / 2);
+// answer for relative sort Array
 
-    if(target === array[middleIndex]){
-    return console.log('the number ' + target + 'was found at position' + middleIndex);
+
+var relativeSortArray = function(arr1, arr2) {
+
+  let positionArray=[];
+  let newArray=[];
+  let notInArray=[];
+  let frequencyOutput=[];
+
+//this edits deductedArr2 so it only contains values not present in arr2
+
+   function notInArray2(){
+        let deductedArr2 = arr1;
+          for(var i=0;i<deductedArr2.length;i++){
+            for(var x=0;x<arr2.length;x++){
+                if(deductedArr2[i] === arr2[x]){
+                    delete deductedArr2[i]
+                }
+            }
+        }
+
+     let preSort = deductedArr2.filter(function (el) {return el !=null});
+       notInArray = preSort.sort((a,b) => a-b);
+
+   }
+
+
+
+   //these are instructions on how to re-assemble the array
+    for(var i=0; i < arr2.length;i++){
+        positionArray.push({value:arr2[i], index:arr2.indexOf(arr2[i])});
     }
-    else if(target < array[middleIndex]){
-      endIndex = middleIndex - 1;
-    }
-    else if(target > array[middleIndex]){
-      startIndex = middleIndex + 1
-    }
 
+//frequency counter now works
+  function frequencyCounter(){
+    for(var u = 0; u < arr2.length; u++){
+        var counter = 0;
+        for (var b=0; b < arr1.length;b++){
+
+            //it never hits this condition for some reason
+               if(arr2[u] == arr1[b]){
+                counter+=1;
+
+            }
+
+        }
+        positionArray[u].frequency = counter;
+    }
   }
-  console.log('your number was not found in this array');
+
+
+
+
+function assembleFrequency(){
+    commonArray=[];
+    for(var c = 0;c<positionArray.length;c++){
+        for(var d = 0;d<positionArray[c].frequency;d++){
+          commonArray.push(positionArray[c].value)
+        }
+    }
+    frequencyOutput=commonArray;
+}
+
+    frequencyCounter();
+    notInArray2();
+    assembleFrequency();
+
+    return frequencyOutput.concat(notInArray);
+
 };
-
-let myArray = [0,1,2,3,4,5,6,7,8];
-
-
-binarySearch(myArray,6);
