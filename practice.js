@@ -69,71 +69,81 @@
 // answer for relative sort Array
 
 
-var relativeSortArray = function(arr1, arr2) {
+// var relativeSortArray = function(arr1, arr2) {
+//
+//   let positionArray=[];
+//   let newArray=[];
+//   let notInArray=[];
+//   let frequencyOutput=[];
+//
+// //this edits deductedArr2 so it only contains values not present in arr2
+//
+//    function notInArray2(){
+//         let deductedArr2 = arr1;
+//           for(var i=0;i<deductedArr2.length;i++){
+//             for(var x=0;x<arr2.length;x++){
+//                 if(deductedArr2[i] === arr2[x]){
+//                     delete deductedArr2[i]
+//                 }
+//             }
+//         }
+//
+//      let preSort = deductedArr2.filter(function (el) {return el !=null});
+//        notInArray = preSort.sort((a,b) => a-b);
+//
+//    }
+//
+//
+//
+//    //these are instructions on how to re-assemble the array
+//     for(var i=0; i < arr2.length;i++){
+//         positionArray.push({value:arr2[i], index:arr2.indexOf(arr2[i])});
+//     }
+//
+// //frequency counter now works
+//   function frequencyCounter(){
+//     for(var u = 0; u < arr2.length; u++){
+//         var counter = 0;
+//         for (var b=0; b < arr1.length;b++){
+//
+//             //it never hits this condition for some reason
+//                if(arr2[u] == arr1[b]){
+//                 counter+=1;
+//
+//             }
+//
+//         }
+//         positionArray[u].frequency = counter;
+//     }
+//   }
+//
+//
+//
+//
+// function assembleFrequency(){
+//     commonArray=[];
+//     for(var c = 0;c<positionArray.length;c++){
+//         for(var d = 0;d<positionArray[c].frequency;d++){
+//           commonArray.push(positionArray[c].value)
+//         }
+//     }
+//     frequencyOutput=commonArray;
+// }
+//
+//     frequencyCounter();
+//     notInArray2();
+//     assembleFrequency();
+//
+//     return frequencyOutput.concat(notInArray);
+//
+// };
 
-  let positionArray=[];
-  let newArray=[];
-  let notInArray=[];
-  let frequencyOutput=[];
+//basic while loop
+let i =0;
+let text = "";
 
-//this edits deductedArr2 so it only contains values not present in arr2
-
-   function notInArray2(){
-        let deductedArr2 = arr1;
-          for(var i=0;i<deductedArr2.length;i++){
-            for(var x=0;x<arr2.length;x++){
-                if(deductedArr2[i] === arr2[x]){
-                    delete deductedArr2[i]
-                }
-            }
-        }
-
-     let preSort = deductedArr2.filter(function (el) {return el !=null});
-       notInArray = preSort.sort((a,b) => a-b);
-
-   }
-
-
-
-   //these are instructions on how to re-assemble the array
-    for(var i=0; i < arr2.length;i++){
-        positionArray.push({value:arr2[i], index:arr2.indexOf(arr2[i])});
-    }
-
-//frequency counter now works
-  function frequencyCounter(){
-    for(var u = 0; u < arr2.length; u++){
-        var counter = 0;
-        for (var b=0; b < arr1.length;b++){
-
-            //it never hits this condition for some reason
-               if(arr2[u] == arr1[b]){
-                counter+=1;
-
-            }
-
-        }
-        positionArray[u].frequency = counter;
-    }
-  }
-
-
-
-
-function assembleFrequency(){
-    commonArray=[];
-    for(var c = 0;c<positionArray.length;c++){
-        for(var d = 0;d<positionArray[c].frequency;d++){
-          commonArray.push(positionArray[c].value)
-        }
-    }
-    frequencyOutput=commonArray;
+while (i < 10) {
+  text = "The number is " + i;
+  console.log(text);
+  i++;
 }
-
-    frequencyCounter();
-    notInArray2();
-    assembleFrequency();
-
-    return frequencyOutput.concat(notInArray);
-
-};
