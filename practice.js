@@ -139,11 +139,24 @@
 // };
 
 //basic while loop
-let i =0;
-let text = "";
+// let i =0;
+// let text = "";
+//
+// while (i < 10) {
+//   text = "The number is " + i;
+//   console.log(text);
+//   i++;
+// }
 
-while (i < 10) {
-  text = "The number is " + i;
-  console.log(text);
-  i++;
-}
+//recursive function that counts down from a number to zero
+
+let recurse = (entryNumber) =>{
+  console.log(entryNumber);
+  let nextNumber = entryNumber-1;
+  if (nextNumber>0){
+    recurse(nextNumber);
+  }
+
+};
+
+recurse(60);
