@@ -164,39 +164,46 @@
 //Intersection of 2 arrays leet code problem:
 
 
-var intersection = function(nums1, nums2) {
+// var intersection = function(nums1, nums2) {
+//
+//     let overlapWithDupes = [];
+//     let finalOutput = [];
+//
+// let commonIntegers = () =>{
+//     for(var i = 0; i<nums1.length;i++){
+//         for(var j=0; j<nums2.length;j++){
+//             if(nums1[i]===nums2[j]){
+//                 overlapWithDupes.push(nums2[j]);
+//
+//             }
+//         }
+//     }
+// }
+//
+// let removeDupes = () =>{
+//     for(var i=0;i<overlapWithDupes.length;i++){
+//         for(var j=0;j<overlapWithDupes.length;j++){
+//             if(overlapWithDupes[i]==overlapWithDupes[j] && i != j){
+//
+//                 delete overlapWithDupes[j]
+//                 }
+//
+//         }
+//         if (overlapWithDupes[i] != undefined){
+//             finalOutput.push(overlapWithDupes[i]);
+//         }
+//     }
+// }
+//
+//    commonIntegers();
+//     removeDupes();
+//     return finalOutput
+//
+// };
 
-    let overlapWithDupes = [];
-    let finalOutput = [];
+let array1 = [1,1,1,2,3,4,45]
 
-let commonIntegers = () =>{
-    for(var i = 0; i<nums1.length;i++){
-        for(var j=0; j<nums2.length;j++){
-            if(nums1[i]===nums2[j]){
-                overlapWithDupes.push(nums2[j]);
 
-            }
-        }
-    }
-}
+let set1 = new Set(array1);
 
-let removeDupes = () =>{
-    for(var i=0;i<overlapWithDupes.length;i++){
-        for(var j=0;j<overlapWithDupes.length;j++){
-            if(overlapWithDupes[i]==overlapWithDupes[j] && i != j){
-
-                delete overlapWithDupes[j]
-                }
-
-        }
-        if (overlapWithDupes[i] != undefined){
-            finalOutput.push(overlapWithDupes[i]);
-        }
-    }
-}
-
-   commonIntegers();
-    removeDupes();
-    return finalOutput
-
-};
+console.log(Array.from(set1));
