@@ -201,9 +201,31 @@
 //
 // };
 
-let array1 = [1,1,1,2,3,4,45]
+// let array1 = [1,1,1,2,3,4,45]
+//
+//
+// let set1 = new Set(array1);
+//
+// console.log(Array.from(set1));
 
 
-let set1 = new Set(array1);
+//Solved staircase counter with while loop
 
-console.log(Array.from(set1));
+var arrangeCoins = function(n) {
+    let fullStaircaseCounter = 0;
+    let stairSize = 1;
+    let coinsRemaining = n;
+
+   let stairCounter = () =>{
+
+    while((coinsRemaining / stairSize) >= 1 ){
+        fullStaircaseCounter++;
+        coinsRemaining = coinsRemaining - stairSize;
+        stairSize +=1;
+
+    }
+   }
+
+   stairCounter();
+   return fullStaircaseCounter;
+};
