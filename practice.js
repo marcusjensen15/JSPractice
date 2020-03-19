@@ -152,11 +152,10 @@
 
 let recurse = (entryNumber) =>{
   console.log(entryNumber);
-  let nextNumber = entryNumber-1;
-  if (nextNumber>0){
+  let nextNumber = entryNumber - 1;
+  if(nextNumber > 0){
     recurse(nextNumber);
   }
+}
 
-};
-
-recurse(60);
+recurse(40);
